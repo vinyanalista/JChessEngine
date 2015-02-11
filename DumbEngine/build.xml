@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_dumb_engine_runnable_jar" name="Create Runnable Jar for Project DumbEngine">
+	<!-- ANT 1.7 is required -->
+	<target name="create_dumb_engine_runnable_jar">
+		<jar basedir="bin" destfile="../dist/DumbEngine.jar" filesetmanifest="mergewithoutmain">
+			<manifest>
+				<attribute name="Class-Path" value="." />
+				<attribute name="Main-Class" value="br.com.vinyanalista.jchessengine.example.DumbEngine" />
+			</manifest>
+			<zipfileset src="lib/JChessEngine.jar" />
+		</jar>
+	</target>
+</project>

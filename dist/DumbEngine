@@ -1,0 +1,4 @@
+#!/bin/sh
+SCRIPT_FOLDER=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $SCRIPT_FOLDER
+xboard -cp -fcp "java -jar DumbEngine.jar" -scp "java -jar DumbEngine.jar" -coords -debug

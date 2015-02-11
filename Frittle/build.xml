@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_frittle_runnable_jar" name="Create Runnable Jar for Project Frittle">
+	<!-- ANT 1.7 is required -->
+	<target name="create_frittle_runnable_jar">
+		<jar basedir="bin" destfile="../dist/Frittle.jar" filesetmanifest="mergewithoutmain">
+			<manifest>
+				<attribute name="Class-Path" value="." />
+				<attribute name="Main-Class" value="br.com.vinyanalista.jchessengine.example.Frittle" />
+			</manifest>
+			<zipfileset src="lib/JChessEngine.jar" />
+		</jar>
+	</target>
+</project>

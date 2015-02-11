@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_lib_jar" name="Create Jar for Project JChessEngine">
+	<!-- ANT 1.7 is required -->
+	<target name="create_lib_jar">
+		<jar basedir="bin" destfile="../dist/JChessEngine.jar" filesetmanifest="mergewithoutmain">
+			<manifest>
+				<attribute name="Class-Path" value="." />
+			</manifest>
+		</jar>
+	</target>
+</project>
