@@ -25,21 +25,17 @@ public class Frittle implements JChessEngine {
 		debugMode = false; // TODO Verificar
 	}
 	
-	@Override
 	public void black() {
 	}
 
-	@Override
 	public void computer() {
 	}
 
-	@Override
 	public void debug(String message) {
 		if (debugMode)
 			XBoard.send("# " + message);
 	}
 
-	@Override
 	public void force() {
 		debug("Frittle is inactive");
         ai.destroyThreads();
@@ -65,7 +61,6 @@ public class Frittle implements JChessEngine {
         return game;
     }
     
-	@Override
 	public void go() {
 		// First check if the game is still on
         if(game.isGameOver())
@@ -78,12 +73,10 @@ public class Frittle implements JChessEngine {
         }
 	}
 	
-	@Override
 	public void moveNow() {
 		ai.moveNow();
 	}
 
-	@Override
 	public void newGame() {
 		// Start a new game
         ai.destroyThreads();
@@ -92,7 +85,6 @@ public class Frittle implements JChessEngine {
         debug("New game started");
 	}
 	
-	@Override
 	public void opponentMove(String opponentMove) {
 		if(game.doMove(opponentMove))
         {
@@ -108,33 +100,27 @@ public class Frittle implements JChessEngine {
         }
 	}
 	
-	@Override
 	public void performanceTest(int depth) {
 		Perft p = new Perft(game.getCurrentState());
 		p.test(depth);
 	}
 
-	@Override
 	public void quit() {
 	}
 
-	@Override
 	public void random() {
 	}
 	
-	@Override
 	public void remove() {
 		game.undo();
 		game.undo();
         debug("Reversed two moves");
 	}
 	
-	@Override
 	public void resign() {
 		game.resign();
 	}
 	
-	@Override
 	public void setBoard(String fen) {
         try
         {
@@ -149,48 +135,39 @@ public class Frittle implements JChessEngine {
         }
 	}
 	
-	@Override
 	public void setSearchDepth(int depth) {
         ai.searchDepth = depth;
         debug("OK");
 	}
 
-	@Override
 	public void setDebug(boolean debug) {
 		debugMode = debug;
 	}
 
-	@Override
 	public void setOpponentTime(int time) {
 	}
 
-	@Override
 	public void setPondering(boolean pondering) {
 		ai.ponderMode = pondering;
 		debug("Pondering " + (pondering ? "on" : "off"));
 	}
 
-	@Override
 	public void setProtocolVersion(int protocolVersion) {
 		XBoard.feature("myname=\"Frittle " + VERSION + "\" setboard=1 analyze=0 variants=\"normal\" colors=0 debug=1 done=1");
 	}
 
-	@Override
 	public void setShowThinking(boolean showThinking) {
 		ai.showThinking = showThinking;
 		debug("Thinking " + (showThinking ? "on" : "off"));
 	}
 
-	@Override
 	public void setTime(long time) {
 		ai.clock.set(time);
 	}
 
-	@Override
 	public void setTimeControls(int time) {
 	}
 
-	@Override
 	public void setTimeControls(int movesPerSession, long baseTime, long increment) {
 		// Set clock format on game
         if (movesPerSession > 0) // Tournament format
@@ -202,18 +179,15 @@ public class Frittle implements JChessEngine {
         debug("OK");
 	}
 
-	@Override
 	public void undo() {
 		game.undo();
         debug("Reversed one move");
 	}
 	
-	@Override
 	public void unrecognizedCommand(String input) {
 		// Do nothing if erroneous command was made in XBoard mode
 	}
 
-	@Override
 	public void white() {
 	}
 	

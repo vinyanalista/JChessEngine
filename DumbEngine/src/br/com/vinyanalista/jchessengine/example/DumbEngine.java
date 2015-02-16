@@ -36,15 +36,12 @@ public class DumbEngine implements JChessEngine {
 		log = bufferedWriter;
 	}
 	
-	@Override
 	public void black() {
 	}
 
-	@Override
 	public void computer() {
 	}
 
-	@Override
 	public void debug(String message) {
 		if (!debug) {
 			return;
@@ -62,99 +59,76 @@ public class DumbEngine implements JChessEngine {
 		}
 	}
 
-	@Override
 	public void force() {
 	}
 
-	@Override
 	public void go() {
 		XBoard.move(XBoard.askUser("Please, help me! Give me a move!"));
 	}
 	
-	@Override
 	public void moveNow() {
 	}
 
-	@Override
 	public void newGame() {
 	}
 	
-	@Override
 	public void opponentMove(String opponentMove) {
 		go();
 	}
 	
-	@Override
 	public void performanceTest(int depth) {
 	}
 
-	@Override
 	public void quit() {
 	}
 
-	@Override
 	public void random() {
 	}
 	
-	@Override
 	public void remove() {
 	}
 
-	@Override
 	public void resign() {
 	}
 
-	@Override
 	public void setBoard(String fen) {
 	}
 
-	@Override
 	public void setDebug(boolean debug) {
 		this.debug = debug;
 	}
 
-	@Override
 	public void setOpponentTime(int time) {
 	}
 	
-	@Override
 	public void setPondering(boolean pondering) {
 	}
 
-	@Override
 	public void setProtocolVersion(int protocolVersion) {
 		XBoard.feature("myname=\"DumbEngine\" setboard=1 analyze=0 variants=\"normal\" colors=0 debug=1 done=1");
 	}
 	
-	@Override
 	public void setSearchDepth(int depth) {
 	}
 	
-	@Override
 	public void setShowThinking(boolean showThinking) {
 	}
 
-	@Override
 	public void setTime(long time) {
 	}
 
-	@Override
 	public void setTimeControls(int time) {
 	}
 
-	@Override
 	public void setTimeControls(int movesPerSession, long baseTime, long increment) {
 	}
 	
-	@Override
 	public void undo() {
 	}
 	
-	@Override
 	public void unrecognizedCommand(String input) {
 	}
 
-	@Override
 	public void white() {
 	}
 	
